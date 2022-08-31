@@ -1,0 +1,192 @@
+html
+{
+  background-color: white;
+  margin: 0 25px 25px 25px;
+  text-align: center;
+}
+
+.description-of-the-page
+{
+  margin: 0 25px;
+  text-align: left; 
+}
+
+#title-hr
+{
+  margin: 0 25px;
+}
+
+main
+{
+  display: flex;
+  flex-direction: row;
+  /* flex-wrap: wrap; */
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+/* any section which is a child of main */
+main>section
+{
+  border: solid 1px;
+  margin-left: 25px;
+  margin-right: 25px;
+  margin-top: 25px;
+  overflow: scroll;
+  padding: 0 25px 25px 25px;
+  max-height: 80vh;
+}
+
+#input-section
+{
+  align-items: flex-start;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  position: sticky;
+  top: 0;
+  z-index: 99;
+}
+
+#invalid-input-span
+{
+  color: red;
+}
+
+/* display a message that asks the user to scroll down to see the visualization */
+#smallScreenScrollMessage
+{
+  display: none;
+}
+
+table
+{
+  border-collapse: collapse;
+}
+
+#description-of-the-algorithm table, th, tr, td
+{
+  border: solid 1px;
+}
+
+.blue-background
+{
+  background-color: rgb(150, 150, 255);
+  color: white;
+}
+
+.red-background
+{
+  background-color: rgb(255, 147, 97);
+  color: white;
+}
+
+.green-background
+{
+  background-color: rgba(0, 196, 98, 0.8);
+  color: white;
+}
+
+/* any table, tr and td in a section of id conversion-visualizer-section */
+#conversion-visualizer-section table, 
+#conversion-visualizer-section tr, 
+#conversion-visualizer-section td
+{
+  border-style: solid none solid solid;
+  color: black;
+}
+
+/* any table in a section of id conversion-visualizer-section */
+#conversion-visualizer-section table
+{
+  margin: 25px;
+}
+
+/* any tr in a section of id conversion-visualizer-section */
+#conversion-visualizer-section td
+{
+  height: 35px;
+  text-align: center;
+  width: 80px;
+  background-color:lightgrey;
+}
+
+/* any td which has a class of blue-background and is in a section of id conversion-visualizer-section */
+#conversion-visualizer-section td.blue-background
+{
+  background-color: rgb(150, 150, 255);
+  color: white;
+}
+
+/* any td which has a class of red-background and is in a section of id conversion-visualizer-section */
+#conversion-visualizer-section td.red-background
+{
+  background-color: rgb(255, 147, 97);
+  color: white;
+}
+
+/* any td which has a class of green-background and is in a section of id conversion-visualizer-section */
+#conversion-visualizer-section td.green-background
+{
+  background-color: rgba(0, 196, 98, 0.8);
+  color: white;
+}
+
+#current-expression, #result-expression, #conversion-visualizer-section
+{
+  min-height: 20px;
+  min-width: 20px;
+  border: solid 1px;
+  padding: 10px;
+  margin: 20px;
+}
+
+/* all pragraphs with the class as blue-background/red-background/green-background */
+p.blue-background, p.red-background, p.green-background
+{
+  margin-top: 5px;
+  margin-bottom: 0;
+}
+
+/* first paragraph inside a section of id log-section */
+#log-section p:first-of-type
+{
+  background-color: white;
+  position: sticky;
+  top: 0;
+}
+
+/* any anchor tag that is a child of the footer tag */
+footer>a
+{
+  text-decoration-line: none;
+}
+
+/* any hr tag that is a child of the footer tag */
+footer>hr
+{
+  margin: 25px;
+  /* margin-left: 25px;
+  margin-right: 25px; */
+}
+
+@media (max-width: 1180px) {
+  main
+  {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* display a message that asks the user to scroll down to see the visualization */
+  #smallScreenScrollMessage
+  {
+    display: inherit;
+  }
+
+  #log-section
+  {
+    margin-top: 25px;
+    max-height: 55vh;
+  }
+}

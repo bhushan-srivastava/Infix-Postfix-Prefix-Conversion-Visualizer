@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- meta tags -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Visualize infix, postfix and prefix conversions">
+    <meta name="keywords" content="Infix Prefix Postfix">
+    <meta name="robots" content="index, follow">
+
+    <!-- open graph meta tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Infix, Postfix And Prefix Conversion Visualizer">
+    <meta property="og:url" content="https://bhushan-srivastava.github.io/Infix-Postfix-Prefix-Conversion-Visualizer/">
+    <meta property="og:image"
+        content="https://raw.githubusercontent.com/bhushan-srivastava/Infix-Postfix-Prefix-Conversion-Visualizer/main/images/favicon.png">
+    <meta property="og:description" content="Visualize infix, postfix and prefix conversions">
+
+    <!-- twitter summary card meta tags -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Infix, Postfix And Prefix Conversion Visualizer">
+    <meta name="twitter:description" content="Visualize infix, postfix and prefix conversions">
+    <meta name="twitter:image"
+        content="https://raw.githubusercontent.com/bhushan-srivastava/Infix-Postfix-Prefix-Conversion-Visualizer/main/images/favicon.png">
+    <meta name="twitter:image:alt" content="Image of a stack">
+
+    <!-- twitter summary large image card meta tags -->
+    <!-- <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Document">
+    <meta name="twitter:description" content="description">
+    <meta name="twitter:image" content="some-image-url">
+    <meta name="twitter:image:alt" content="image-alt-text"> -->
+
+    <!-- title -->
+    <title>Infix, Postfix And Prefix Conversion Visualizer</title>
+
+    <!-- external style sheet -->
+    <link rel="stylesheet" href="./css/style.css">
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon">
+</head>
+
+<body>
+    <!-- header -->
+    <header>
+        <!-- heading of the page -->
+        <h1>
+            Infix, Postfix And Prefix Conversion Visualizer
+        </h1>
+
+        <!-- horizontal line below the title of the page -->
+        <hr id="title-hr">
+
+        <!-- description of the page -->
+        <div class="description-of-the-page">
+            <p>
+                The way to write arithmetic expression is known as a notation. An arithmetic expression can be written
+                in three different but equivalent notations, i.e., without changing the output of an
+                expression. These notations are - Infix, Postfix and Prefix. These notations are named as how they use
+                operators in expressions.
+            </p>
+
+            <!-- difference between infix, postfix and prefix notations -->
+            <table>
+                <thead>
+                    <tr>
+                        <th>Infix</th>
+                        <th>Postfix</th>
+                        <th>Prefix</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>
+                            In Infix notation, operators are written in-between operands.
+                        </td>
+
+                        <td>
+                            In Postfix notation, the operator is postfixed to the operands i.e., the operator is written
+                            after the operands.
+                        </td>
+
+                        <td>
+                            In Prefix notation, the operator is prefixed to operands, i.e. the operator is written ahead
+                            of the operands.
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>E.g. A + B</td>
+                        <td>E.g. A B +</td>
+                        <td>E.g. + A B</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </header>
+
+    <!-- main section-->
+    <main>
+        <!-- conversion visualizer section -->
+        <section id="algorithm-visualizer-section">
+            <!-- input section -->
+            <section id="input-section">
+                <p>
+                    When entering an expression, use only single letters
+                    <br>
+                    and any of the following operators: + - * / % ^
+                </p>
+
+                <span>
+                    <!-- input the expression -->
+                    <label for="expression">Expression to convert:</label>
+                    <!-- text input -->
+                    <input id="expression" type="text" placeholder="A + B">
+                </span>
+
+                <span id="invalid-input-span">
+                </span>
+
+                <span>
+                    <!-- input the notation to convert from -->
+                    <label for="current-notation">Convert from:</label>
+                    <!-- drop-down menu input -->
+                    <select id="current-notation">
+                        <option value="infix">Infix</option>
+                        <option value="postfix">Postfix</option>
+                        <option value="prefix">Prefix</option>
+                    </select>
+                </span>
+
+                <span>
+                    <!-- input the notation to convert to -->
+                    <label for="result-notation">Convert to:</label>
+                    <!-- drop-down menu input -->
+                    <select id="result-notation">
+                        <option value="infix" disabled>Infix</option>
+                        <option value="postfix" selected>Postfix</option>
+                        <option value="prefix">Prefix</option>
+                    </select>
+                </span>
+
+                <span>
+                    <!-- Reset Input Button -->
+                    <button id="reset">Reset Input</button>
+
+                    <!-- Start Visualization Button -->
+                    <button id="start-visualization">Start Visualization</button>
+                </span>
+
+                <p id="smallScreenScrollMessage">
+                    Please scroll below to see the visualization
+                </p>
+            </section>
+        </section>
+
+        <!-- Infix, Postfix And Prefix Conversion Visualizer section -->
+        <section>
+            <p>
+                Current expression:
+            </p>
+
+            <section id="current-expression">
+                <span>
+                </span>
+            </section>
+
+            <p>
+                Stack:
+            </p>
+
+            <section id="conversion-visualizer-section">
+            </section>
+
+            <p>
+                Result:
+            </p>
+
+            <section id="result-expression">
+            </section>
+        </section>
+
+        <!-- log section -->
+        <section id="log-section">
+            <p>
+                Logs
+            </p>
+        </section>
+
+        <!-- javascript file -->
+        <script src="./js/App.js" type="module"></script>
+    </main>
+
+    <!-- footer -->
+    <footer>
+        <hr>
+
+        <a href="https://github.com/bhushan-srivastava/">Made by Bhushan Srivastava</a>
+    </footer>
+</body>
+
+</html>
