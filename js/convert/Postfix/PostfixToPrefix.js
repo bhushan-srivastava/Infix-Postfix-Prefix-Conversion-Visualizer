@@ -46,7 +46,7 @@ export default function postfixToPrefix(expression) {
         animationsArr.push([updateCurrentExpression, [ch]]);
 
         /** If the character is any operator (+, -, *, /, %, ^) we simultaneously pop out two elements of the prefix stack and store them in variables.
-         * The first element that pops out will be value1 and the second element that pops out will be value2.
+         * The first element that pops out will be value2 and the second element that pops out will be value1.
          * Since, in the prefix expression the order of arrangement is: operator + value1 + value2 . So, we do the same and concatenate all three popped out elements in the same order and push it in the prefix stack.
          */
         if (ch == '+' || ch == '-' || ch == '*' || ch == '/' || ch == '%' || ch == '^') {
